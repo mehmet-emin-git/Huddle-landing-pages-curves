@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap");
+
+// ---------------------------- Color Variables --------------------------------
+$pink: hsl(322, 100%, 66%);
+$very-dark-cyan: hsl(192, 100%, 9%);
+$very-pale-blue: hsl(207, 100%, 98%);
+// ---------------------------- Global Styles --------------------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  color: $very-dark-cyan;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    flex: 1;
+  }
+}
+
+.btn {
+  background: transparent;
+  border: 1.5px solid $pink;
+  outline: none;
+  padding: 0.5rem 1.8rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  color: $pink;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+}
+
+.cta {
+  background: $pink;
+  border: none;
+  outline: none;
+  padding: 1.5rem 5.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+// ---------------------------- Main Styles --------------------------------
+header {
+  padding: 5rem 0;
+  .flex {
+    justify-content: space-between;
+  }
+}
+
+main {
+  #text {
+    text-align: center;
+    margin: 6rem 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5em;
+    }
+  }
+
+  #hero-image {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 7rem;
+  }
+}
+
+.numbers {
+  margin-top: 7rem;
+
+  .stat {
+    h2 {
+      font-size: 6rem;
+      font-family: "Open Sans", sans-serif;
+      margin: 0;
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+}
