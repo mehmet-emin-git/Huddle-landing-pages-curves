@@ -3,7 +3,9 @@
 // ---------------------------- Color Variables --------------------------------
 $pink: hsl(322, 100%, 66%);
 $very-dark-cyan: hsl(192, 100%, 9%);
-$very-pale-blue: hsl(207, 100%, 98%);
+$very-pale-blue: hsl(210, 100%, 98%);
+$curve: hsl(207, 100%, 98%);
+
 // ---------------------------- Global Styles --------------------------------
 *,
 *::before,
@@ -16,21 +18,21 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   color: $very-dark-cyan;
+  min-height: 10vh;
+  width: 100vw;
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1316px;
   margin: 0 auto;
+  min-height: 100%;
+  padding: 0 1rem;
 }
 
 .flex {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  & > div {
-    flex: 1;
-  }
 }
 
 .btn {
@@ -58,6 +60,7 @@ body {
   letter-spacing: 0.5px;
   font-weight: 700;
   margin-top: 3rem;
+  box-shadow: 0px 5px 15px rgba(black, 0.2);
   cursor: pointer;
 }
 
@@ -72,7 +75,53 @@ img {
   max-width: 100%;
 }
 
-// ---------------------------- Main Styles --------------------------------
+section {
+  padding: 2rem 1.5rem;
+  margin: 15rem 0;
+  background: $curve;
+  min-height: 100%;
+
+  .text {
+    width: 50%;
+  }
+
+  .img {
+    width: 50%;
+  }
+
+  p {
+    max-width: 550px;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .img {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    img{
+      max-width: 90%;
+    }
+  }
+
+}
+
+.reverse {
+  .img {
+    display: flex;
+    justify-content: flex-start;
+    img {
+      max-width: 80%;
+    }
+  }
+}
+
+// -------------------%-------- Main Styles --------------------------------
 header {
   padding: 5rem 0;
   .flex {
@@ -105,7 +154,16 @@ main {
 }
 
 .numbers {
-  margin-top: 7rem;
+
+  margin: 7rem auto 0 auto;
+  max-width: 57rem;
+  padding: 0;
+  background: none;
+
+  .container {
+    justify-content: space-between;
+    margin: 0 auto;
+  }
 
   .stat {
     h2 {
@@ -115,7 +173,572 @@ main {
     }
 
     img {
+      margin: 0 0 -0.6rem .8rem;
+      width: 3rem;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.5rem;
+      color: gray;
       margin: 0;
     }
+  }
+}
+
+
+// ---------------------------- Grow together Styles -------------------------------
+
+.grow-together {
+  position: relative;
+  width: 100%;
+
+  .container {
+    max-width: 1180px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("./images/bg-section-top-desktop-1.svg") no-repeat 100% 100% /100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: -99%;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: url("./images/bg-section-bottom-desktop-1.svg") no-repeat 100% 100% /100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    bottom: -22%;
+    left: 0;
+  }
+
+}
+
+// ---------------------------- flowin Conversation Styles -------------------------------
+.conversations {
+  background: none;
+
+  .img {
+    justify-content: center;
+    img {
+      max-width: 90%;
+    }
+  }
+
+  .text {
+    margin-left: 8rem;
+  }
+}
+
+// ---------------------------- Users Styles -------------------------------
+.users {
+  position: relative;
+  width: 100%;
+  background: $curve;
+
+  .text {
+    margin-right: -6rem;
+  }
+
+  .img {
+    img {
+      max-width: 80%;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("./images/bg-section-top-desktop-2.svg") no-repeat 100% 100%/100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: -99%;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: url("./images/bg-section-bottom-desktop-2.svg") no-repeat 100% 100%/100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    bottom: -27%;
+    left: 0;
+  }
+}
+
+// ---------------------------- call to action  Styles -------------------------------
+.call-to-action {
+  text-align: center;
+  background: none;
+  padding-bottom: 6rem;
+}
+
+
+// ---------------------------- Footer Styles -------------------------------
+footer {
+  background: $very-dark-cyan;
+  position: relative;
+  color: white;
+
+  .container {
+    padding: 5rem 3rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: url("./images/bg-footer-top-desktop.svg") no-repeat 100% 100%/100%;
+    width: 100%;
+    height: 100%;
+    top: -99%;
+    left: 0;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+
+    p {
+      max-width: 48%;
+      font-size: .9rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      margin-top: 1.3rem;
+    }
+
+    .phone, .email {
+      margin-top: 1rem;
+      span {
+        padding-left: 1.5rem;
+      }
+    }
+
+    .social {
+      padding: 0;
+      list-style: none;
+      margin-top: 4.5rem;
+      
+      li {
+        a {
+          display: inline-block;
+          width: 2rem;
+          height: 2rem;
+        }
+
+        &:not(:first-child){
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .newsletter {
+    width: 52%;
+
+    h4 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      max-width: 74%;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    form {
+      justify-content: space-between;
+      margin-top: 2.5rem;
+
+      .input {
+        width: 63%;
+
+        #email {
+          width: 100%;
+          padding: 1rem 2rem;
+          border-radius: 7px;
+          border: none;
+        }
+
+      }
+      .btn-sq {
+        padding: .8rem 2.5rem;
+        border: none;
+        border-radius: 5px;
+        background: $pink;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 768px){
+
+  header {
+    padding: 1.5rem 0;
+    #logo {
+      width: 10rem;
+    }
+  }
+
+  .cta {
+    padding: 1rem 3.2rem;
+    font-size: 1.1rem;
+  }
+
+  main {
+    #text {
+      h1 {
+        font-size: 2.2rem;
+        max-width: 30rem;
+        margin: 0 auto 1.5rem auto;
+      }
+
+      p {
+        font-size: 1.3rem;
+        max-width: 30rem;
+      }
+    }
+
+    #hero-image {
+      max-width: 67%;
+
+    }
+  }
+
+  section {
+    margin: 9rem 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .grow-together, .conversations, .users {
+
+    .container {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+
+    .img, .text {
+      width: 100%;
+    }
+
+    .text {
+      margin-top: 3rem;
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        max-width: 465px;
+        margin: 0 auto;
+      }
+    }
+
+    .img {
+      width: 70%;
+    }
+  }
+
+  .numbers{
+    .container {
+      flex-direction: column;
+    }
+
+    .stat:not(:first-child){
+      margin-top: 8.5rem;
+    }
+
+    .stat {
+      h2{
+        font-size: 5.5rem;
+      }
+    }
+  }
+
+  .grow-together {
+    &::before {
+      background: url("./images/bg-section-top-mobile-1.svg") no-repeat 100% 100% /100%;
+      top: -99%;
+    }
+  
+    &::after {
+      background: url("./images/bg-section-bottom-mobile-1.svg") no-repeat 100% 100% /100%;
+      bottom: -14%;
+    }
+  
+  }
+
+  .conversations {
+    .container {
+      flex-direction: column;
+    }
+    .text {
+      margin-left: 0rem;
+    }
+
+  }
+
+  .users {
+    margin-top: 20rem;
+
+    .text {
+      margin-right: 0rem;
+    }
+    
+    .img {
+      max-width: 90%;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &::before {
+      background: url("./images/bg-section-top-mobile-2.svg") no-repeat 100% 100% /100%;
+      top: -99%;
+    }
+  
+    &::after {
+      background: url("./images/bg-section-bottom-mobile-2.svg") no-repeat 100% 100% /100%;
+      bottom: -29%;
+    }
+  }
+
+  .call-to-action {
+    h3 {
+      font-size: 2.2rem;
+      max-width: 30rem;
+      margin: 0 auto;
+    }
+  }
+
+
+  footer {
+    .container {
+      flex-direction: column-reverse;
+    }
+
+    &::before {
+      background: url("./images/bg-footer-top-mobile.svg") no-repeat 100% 100% /100%;
+      top: -99%;
+    }
+
+    .newsletter {
+      width: 100%;
+      p {
+        max-width: 53%;
+        font-size: .9rem;
+        font-weight: 600;
+        line-height: 1.6em;
+      }
+  
+      form {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+  
+        .input {
+          width: 100%;
+  
+          #email {
+            width: 100%;
+            padding: 1rem 2rem;
+            border-radius: 7px;
+            border: none;
+          }
+  
+        }
+        .btn-sq {
+          align-self: flex-end;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
+    .content {
+      margin-top: 7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px){
+  header {
+    #logo {
+      width: 7rem;
+    }
+
+    .btn {
+      padding: 0.25rem 1.2rem;
+      font-size: .7rem;
+    }
+  }
+
+  .cta {
+    padding: .8rem 2rem;
+    font-size: .8rem;
+  }
+
+  main {
+    #text {
+      h1 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        margin: 1.5rem 0;
+      }
+
+      p {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+    }
+
+    #hero-image {
+      max-width: 95%;
+
+    }
+  }
+
+  .numbers{
+    text-align: center;
+    .stat:not(:first-child){
+      margin-top: 4.5rem;
+    }
+
+    .stat {
+      position: relative;
+      h2{
+        font-size: 3.5rem;
+      }
+
+      p {
+        font-size: .9rem;
+      }
+
+      img {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        margin-left: 0;
+        width: 2rem;
+     }
+    }
+
+  }
+
+  .grow-together, .conversations, .users {
+
+    .container {
+      padding: 0;
+    }
+
+    .img, .text {
+      width: 100%;
+    }
+
+    .img {
+      padding-top: 2rem;
+    }
+
+    .text {
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: .9rem;
+        max-width: 95%;
+      }
+    }
+  }
+
+  .grow-together {
+    &::after {
+      background: url("./images/bg-section-bottom-mobile-1.svg") no-repeat 100% 100% /100%;
+      bottom: -9%;
+    }
+  }
+
+  .users {
+    padding-bottom: 6rem;
+    margin-top: 13rem;
+    &::after {
+      background: url("./images/bg-section-bottom-mobile-2.svg") no-repeat 100% 100% /100%;
+      bottom: -17%;
+    }
+  }
+
+  .call-to-action {
+    h3 {
+      font-size: 1.5rem;
+      max-width: 100%;
+    }
+  }
+
+
+  footer {
+    .container {
+      flex-direction: column-reverse;
+      padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .newsletter {
+      p {
+        max-width: 100%;
+      }
+    }
+
+    .content {
+      margin-top: 7rem;
+
+      .logo {
+        width: 12rem;
+      }
+
+      p {
+        max-width: 100%;
+      }
+
+      .social {
+        margin-top: 3.5rem;
+        
+        li {
+          a {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+  
+          &:not(:first-child){
+            margin-left: 1.3rem;
+          }
+        }
+      }
+    }
+
   }
 }
